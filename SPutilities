@@ -1,0 +1,43 @@
+data transformation
+> clean data in excel
+transform SP1500 to stationary by differencing
+dsp1500utilities=d(sp1500utilities)
+R=dlog(sp1500utilitiess)*100
+=log rerturns easier to explain percentage increase. easier to observe volatility trends on the graph plot
+log retuens become stationary
+by doing the first differencing we make the data stationary.
+
+Data plots.
+VIX line plot is following a steady line over time-stationary
+SP1500utilities line plot is volatile def not stationary
+Predictability of returns and squared returns
+examibe the plots
+check for high and low volatility.
+extremes in sqr returns in 2008 economic crisis
+generate equation 
+r c ar(1)
+use the corellogram to look at the acf and Pacf function
+examine whether the functions exponentially decaying or significant.
+check for the  extreme values (0.05)
+examine the corellogram residual Q statistics check whether the graph is flat or whether it is larger than
+0.05
+for white noise> look at residuals corellogram plot.... are they flat. if it is flat no correlation which means the process does not have a memory >there is white noise
+for satbility;
+>- check the regression output add the garch and residual under the variance eqn. If less than 1 model is stable and vice versa
+test on IGARCH
+open drop down restrictions on GARCH model.
+on IGARCH the RESID plus GARCH coefficient should be equal to 1.
+Unconditional Varaiance
+created a garch series using make garch series from proj window
+create a new series called sigma
+sigma=@sqrt(garch03)
+use the group of VIX and SIGMA to analyse whether or not you have unconditional variance
+fore heteroscadasticity.
+<view<residual diagnostics<ARCH LM test ( if chi distribution is >0.05 there is no heteroscadastoicity)
+checking for leptokurtosis.
+residual diagnostics<histogram bormality test. if larger than 3 there is leptokurtosis
+consider nonnormal alternatives conditional leptokurtosis
+change threshold and observe.
+< view GARCH graph check if new impact curve is assymetric
+calculate
+ VAR of your choice of model compare to VIX
